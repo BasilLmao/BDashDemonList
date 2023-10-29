@@ -12,7 +12,7 @@ function displayDemonList(demonList) {
         const demon = demonList[i];
         if (demon) {
             const listItem = document.createElement("li");
-            listItem.textContent = `${i}: ${demon.name} - ${demon.rating}`;
+            listItem.textContent = `${i}: ${demon.Name} - ${demon.Creator} - ${demon.Rating}`;
             demonListElement.appendChild(listItem);
         }
     }
