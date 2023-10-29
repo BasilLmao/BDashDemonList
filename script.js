@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const githubRawURL = "https://raw.githubusercontent.com/username/repo/main/demonlist.json";
+    const githubRawURL = "https://raw.githubusercontent.com/BasilLmao/monkyshouse/main/demonlist.json";
 
     fetch(githubRawURL)
         .then(response => response.json())
