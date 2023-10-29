@@ -2,42 +2,50 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background-color: #1abc9c;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    color: #ffffff;
 }
 
 .container {
-    background-color: #008000;
+    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     width: 80%;
     max-width: 400px;
     text-align: center;
+    transform: scale(0.8);
     opacity: 0;
-    transform: translateY(-20px);
-    animation: fadeIn 0.5s ease-out forwards;
+    animation: fadeIn 0.8s ease-out 0.5s forwards, scaleIn 0.6s ease-out 1.3s forwards;
 }
 
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(-20px);
     }
     to {
         opacity: 1;
-        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1);
     }
 }
 
 header {
-    background-color: #3498db;
-    color: white;
+    background-color: #16a085; /* Green color for header */
     padding: 1.5rem 0;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    color: white; /* Text color for the header */
 }
 
 ul {
@@ -57,4 +65,6 @@ ul li:last-child {
 
 ul li:hover {
     background-color: #ecf0f1;
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
