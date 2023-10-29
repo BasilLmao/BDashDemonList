@@ -1,16 +1,44 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
 }
 
 .container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 80%;
+    max-width: 400px;
     text-align: center;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1rem;
 }
 
 ul {
     list-style: none;
+    padding: 0;
+}
+
+ul li {
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+ul li:last-child {
+    border-bottom: none;
+}
+
+ul li:hover {
+    background-color: #f5f5f5;
 }
