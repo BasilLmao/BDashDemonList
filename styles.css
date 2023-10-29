@@ -42,10 +42,10 @@ body {
 }
 
 header {
-    background-color: #16a085; /* Green color for header */
+    background-color: #16a085;
     padding: 1.5rem 0;
     font-size: 1.8rem;
-    color: white; /* Text color for the header */
+    color: white;
 }
 
 ul {
@@ -55,6 +55,7 @@ ul {
 
 ul li {
     padding: 1.5rem;
+    color: black; /* Text color for demons */
     border-bottom: 1px solid #ecf0f1;
     transition: background-color 0.3s ease;
 }
@@ -67,4 +68,24 @@ ul li:hover {
     background-color: #ecf0f1;
     transform: scale(1.02);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.buttons {
+    margin-top: 2rem;
+}
+
+.button {
+    display: inline-block;
+    margin: 0.5rem;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #3498db;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #2980b9;
 }
