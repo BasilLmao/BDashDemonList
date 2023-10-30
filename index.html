@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
     <title>BDash Demon List</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -15,6 +15,7 @@
         </header>
         <main>
             <ul id="demon-list"></ul>
+            <div id="demon-details"></div>
         </main>
         <div class="buttons">
             <a href="https://discord.gg/HN9GfuRhJF" class="button discord-button">Discord</a>
@@ -23,6 +24,46 @@
         </div>
     </div>
     <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const githubRawURL = "https://raw.githubusercontent.com/BasilLmao/monkyshouse/main/demonlist.json";
+            const demonListElement = document.getElementById("demon-list");
+            const demonDetailsElement = document.getElementById("demon-details");
+
+            fetch(githubRawURL)
+                .then(response => response.json())
+                .then(data => displayDemonList(data))
+                .catch(error => console.error("Error:", error));
+
+            function displayDemonList(demonList) {
+                for (let i = 1; i <= 10; i++) {
+                    const demon = demonList[i];
+                    if (demon) {
+                        const listItem = document.createElement("li");
+                        listItem.setAttribute("data-id", i);
+                        listItem.textContent = `${i}: ${demon.Name} - ${demon.Creator} - ${demon.Rating}`;
+                        demonListElement.appendChild(listItem);
+
+                        listItem.addEventListener("click", () => {
+                            window.location.href = `/demonlist/information/${i}`;
+                        });
+                    }
+                }
+            }
+
+            const urlPath = window.location.pathname;
+            const demonNumber = parseInt(urlPath.split("/").pop());
+            const selectedDemon = demonList[demonNumber];
+
+            if (selectedDemon) {
+                demonDetailsElement.innerHTML = `<h2>${demonNumber}: ${selectedDemon.Name}</h2>
+                                                <p>Creator: ${selectedDemon.Creator}</p>
+                                                <p>Rating: ${selectedDemon.Rating}</p>`;
+            } else {
+                demonDetailsElement.textContent = "Demon not found.";
+            }
+        });
+    </script>
 </body>
 
 </html>
